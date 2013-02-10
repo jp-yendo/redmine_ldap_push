@@ -1,4 +1,6 @@
-redmine_ldap_push
+Redmine LDAP Push
 =================
 
-This Redmine plugin propagates users' information and their memberships to groups and projects, to a LDAP server.
+The plugin tracks changes affecting users, groups or projects and propagates it simultaneously to a Ldap server. 
+This « enslaved » Ldap server can thus be used for authentication purpose (auth. centralization, SSO) while managing 
+the user's roles and project memberships with Redmine.
