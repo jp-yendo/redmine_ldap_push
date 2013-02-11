@@ -1,0 +1,14 @@
+= redmine_ldap_push
+
+Description goes here
+
+LDAP Structure:
+dc=com					ocl=[top,dcObject,organization]
+  dc=example			ocl=[top,dcObject,organization]
+    cn=admin 			olc=[simpleSecurityObject,organizationalRole]
+      ou=users			olc=[top,organizationalUnit]
+      	cn=User Name	olc=[top,inetOrgPerson,poxixAccount]
+      ou=groups 		olc=[top,organizationalUnit]
+        cn=groupName 	olc=[top,posixGroup]
+      ou=projects		olc=[top,organizationalUnit]
+        cn=Project Name	olc=[top,posixGroup,uidObject]
