@@ -1,4 +1,4 @@
-Ldap # English strings go here for Rails i18n
+# English strings go here for Rails i18n
 en:
   label_ldap_active: "Active"
   label_ldap_url: "Ldap server url"
