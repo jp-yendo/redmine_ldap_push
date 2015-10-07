@@ -28,7 +28,7 @@ module RedmineLdapPush
       @rdn = "#{user.login}"
       @attributes = {
         :uidnumber => "#{user.id}",
-        :cn => "#{user.firstname} #{user.lastname}",
+        :cn => "#{user.name}",
         :givenname => "#{user.firstname}",
         :sn => "#{user.lastname}",
         :mail => "#{user.mail}"
