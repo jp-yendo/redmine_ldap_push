@@ -1,0 +1,16 @@
+ja:
+  label_ldap_active: "アクティブ"
+  label_ldap_url: "LDAP サーバーURL"
+  label_ldap_base: "LDAP base"
+  label_ldap_use_tls: "TLS接続"
+  label_ldap_user: "接続ユーザー(cn+dc)"
+  label_ldap_password: "パスワード"
+  
+  label_ldap_users_base: "LDAP ユーザー base DN"
+  label_ldap_groups_base: "LDAP グループ base DN"
+  label_ldap_projects_base: "LDAP プロジェクト base DN"
+
+  label_ldap_timeout: "タイムアウト"
+  
+  ldap_connection_success: "LDAP 認証成功!"
+  ldap_connection_error: "LDAP 接続エラー: %{message}"

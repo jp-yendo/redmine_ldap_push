@@ -1,59 +1,56 @@
 <%
 if request.method == 'GET'
-	begin
-		RedmineLdapPush::LdapPushService.loadSettings
-		if RedmineLdapPush::LdapPushService.enabled
-			Rails.logger.info "notice success!"
-			flash[:notice] = t(:ldap_connection_success)
-		end
-	rescue RedmineLdapPush::LdapRepositoryException => e
-		flash[:error] = t(:ldap_connection_error, :message => e.message)		
-	end
+  begin
+    RedmineLdapPush::LdapPushService.loadSettings
+    if RedmineLdapPush::LdapPushService.enabled
+      Rails.logger.info "notice success!"
+      flash[:notice] = t(:ldap_connection_success)
+    end
+  rescue RedmineLdapPush::LdapRepositoryException => e
+    flash[:error] = t(:ldap_connection_error, :message => e.message)		
+  end
 end
-
 %>
 
 
 <fieldset>
-	<div>
-		<p>
-			<%= label_tag 'settings[ldap_active]', l(:label_ldap_active) %>:
-			<%= check_box_tag 'settings[ldap_active]', 'on', settings['ldap_active'] == 'on' %>
-		</p>
-		<p>
-			<%= label_tag 'settings[ldap_url]', l(:label_ldap_url) %>:
-			<%= url_field_tag 'settings[ldap_url]', settings["ldap_url"] , { :size => 30, :required => true} %>
-		</p>
-		<p>
-			<%= label_tag 'settings[ldap_base]', l(:label_ldap_base) %>:
-			<%= text_field_tag 'settings[ldap_base]', settings["ldap_base"], { :size => 30, :required => true } %>
-		</p>
-		<p>
-			<%= label_tag 'settings[ldap_use_tls]', l(:label_ldap_use_tls) %>:
-			<%= check_box_tag 'settings[ldap_use_tls]', 'on', settings['ldap_use_tls'] %>
-		</p>
-		<p>
-			<%= label_tag 'settings[ldap_user]', l(:label_ldap_user) %>:
-			<%= text_field_tag 'settings[ldap_user]', settings["ldap_user"], { :size => 30, :required => true } %>
-		</p>
-			
-		<p>
-			<%= label_tag 'settings[ldap_password]', l(:label_ldap_password) %>:
-			<%= password_field_tag 'settings[ldap_password]', settings["ldap_password"], { :size => 30, :required => true } %>
-		</p>
-		<p>
-			<%= label_tag 'settings[ldap_users_base]', l(:label_ldap_users_base) %>:
-			<%= text_field_tag 'settings[ldap_users_base]', settings["ldap_users_base"], { :size => 30, :required => true } %>
-		</p>
-		<p>
-			<%= label_tag 'settings[ldap_groups_base]', l(:label_ldap_groups_base) %>:
-			<%= text_field_tag 'settings[ldap_groups_base]', settings["ldap_groups_base"], { :size => 30, :required => true } %>
-		</p>
-		<p>
-			<%= label_tag 'settings[ldap_projects_base]', l(:label_ldap_projects_base) %>:
-			<%= text_field_tag 'settings[ldap_projects_base]', settings["ldap_projects_base"], { :size => 30, :required => true } %>
-		</p>
-		
+  <div>
+    <p>
+      <%= label_tag 'settings[ldap_active]', l(:label_ldap_active) %>:
+      <%= check_box_tag 'settings[ldap_active]', 'on', settings['ldap_active'] == 'on' %>
+    </p>
+    <p>
+      <%= label_tag 'settings[ldap_url]', l(:label_ldap_url) %>:
+      <%= url_field_tag 'settings[ldap_url]', settings["ldap_url"] , { :size => 30, :required => true} %>
+    </p>
+    <p>
+      <%= label_tag 'settings[ldap_base]', l(:label_ldap_base) %>:
+      <%= text_field_tag 'settings[ldap_base]', settings["ldap_base"], { :size => 30, :required => true } %>
+    </p>
+    <p>
+      <%= label_tag 'settings[ldap_use_tls]', l(:label_ldap_use_tls) %>:
+      <%= check_box_tag 'settings[ldap_use_tls]', 'on', settings['ldap_use_tls'] %>
+    </p>
+    <p>
+      <%= label_tag 'settings[ldap_user]', l(:label_ldap_user) %>:
+      <%= text_field_tag 'settings[ldap_user]', settings["ldap_user"], { :size => 30, :required => true } %>
+    </p>
 
-	</div>
+    <p>
+      <%= label_tag 'settings[ldap_password]', l(:label_ldap_password) %>:
+      <%= password_field_tag 'settings[ldap_password]', settings["ldap_password"], { :size => 30, :required => true } %>
+    </p>
+    <p>
+      <%= label_tag 'settings[ldap_users_base]', l(:label_ldap_users_base) %>:
+      <%= text_field_tag 'settings[ldap_users_base]', settings["ldap_users_base"], { :size => 30, :required => true } %>
+    </p>
+    <p>
+      <%= label_tag 'settings[ldap_groups_base]', l(:label_ldap_groups_base) %>:
+      <%= text_field_tag 'settings[ldap_groups_base]', settings["ldap_groups_base"], { :size => 30, :required => true } %>
+    </p>
+    <p>
+      <%= label_tag 'settings[ldap_projects_base]', l(:label_ldap_projects_base) %>:
+      <%= text_field_tag 'settings[ldap_projects_base]', settings["ldap_projects_base"], { :size => 30, :required => true } %>
+    </p>
+  </div>
 </fieldset>

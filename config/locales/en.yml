@@ -14,4 +14,3 @@ en:
   
   ldap_connection_success: "LDAP authentication successful!"
   ldap_connection_error: "LDAP connection problem: %{message}"
-  
