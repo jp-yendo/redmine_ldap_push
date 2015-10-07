@@ -62,7 +62,7 @@ module RedmineLdapPush
     #################
     def self.sync_all_users
       # get a set of user ids, omitting empty logins (anonymous user)
-      redmineUsers = User.all(:conditions => "login <> ''")
+      redmineUsers = User.where("login <> ''")
       # get a set of user logins stored in the LDAP server
       ldapUsers = ldapRepository.getAllUserIds
 
